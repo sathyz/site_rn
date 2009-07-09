@@ -1,0 +1,39 @@
+.section {
+    margin-top: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 5px;
+    padding-bottom: 0px;
+}
+
+.section ul {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.section ul li {
+    display: inline;
+}
+
+.section ul a {
+    background-color: #ECECEC;
+    border: 1px solid #999999;
+    padding: 5px 5px 10px;
+    display: block;
+    float: left;
+    margin: 5px;
+}
+
+.section ul a:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #333333;
+}
+
+.section ul a img {
+    border: 1px solid #999999;
+}
+
+.section ul a.lightbox-enabled img {
+    border: 1px dotted #999999;
+}
+

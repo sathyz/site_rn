@@ -1,0 +1,145 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="robots" content="all,follow">
+
+    <meta name="author" content="skumar"lang="en">
+
+    <meta name="description" content="Rainbow Novelties specialises in all kinds of bags..">
+    <meta name="keywords" content="novelties, bags, rainbow">
+
+    <link rel="stylesheet"  type="text/css" href="/test/css/reset.css">
+    <link rel="stylesheet"  type="text/css" href="/test/css/main.css">
+    <link rel="stylesheet"  type="text/css" href="/test/css/style.css">
+
+    <title>Rainbow Novelties</title>
+    <script type="text/javascript" src="scripts/jquery-1.2.6.min.js"></script>
+
+<script type="text/javascript">
+
+/*** 
+    Simple jQuery Slideshow Script
+    Released by Jon Raasch (jonraasch.com) under FreeBSD license: free to use or modify, not responsible for anything, etc.  Please link out to me if you like it :)
+***/
+
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+    // use this to pull the images in the order they appear in the markup
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+
+    // uncomment the 3 lines below to pull the images in random order
+    
+    // var $sibs  = $active.siblings();
+    // var rndNum = Math.floor(Math.random() * $sibs.length );
+    // var $next  = $( $sibs[ rndNum ] );
+
+
+    $active.addClass('last-active');
+
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});
+
+</script>
+    
+    
+</head><body>
+<!-- Container -->
+<div id="main">
+
+    <!-- Header -->
+    <div id="header">
+
+        <h1 id="logo"><a href="./" title="Go to Rainbow Novelties homepage"><img src="images/logo.gif" alt="Rainbow Novelties"></a></h1>
+        <hr class="noscreen">
+         <!-- /nav -->
+
+    </div> <!-- /header -->
+    
+    <!-- Menu -->
+    <div id="menu">
+
+        <ul>
+            <li id="menu-active"><a href="#">Home</a></li> <!-- Active page -->
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">B2B</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact us </a></li>
+        </ul>
+        
+    <hr class="noscreen">
+    </div> <!-- /menu -->
+
+    <!-- Page document -->
+    <div id="doc-top"></div>
+    <div id="doc" class="box">
+        <!-- Image slideshow -->
+        <div id="doc-right">
+        
+			<div id="slideshow" class="box" >
+	            <img src="images/slideshow/1_1.jpg" alt="Slideshow Image 1" class="active" />
+	            <img src="images/slideshow/2_1.jpg" alt="Slideshow Image 2" />
+	            <img src="images/slideshow/3_1.jpg" alt="Slideshow Image 3" />
+	            <img src="images/slideshow/4_1.jpg" alt="Slideshow Image 4" />
+	            <img src="images/slideshow/5_1.jpg" alt="Slideshow Image 5" />
+	            <img src="images/slideshow/6_1.jpg" alt="Slideshow Image 6" />
+            </div> <!-- /box -->
+        
+        </div> <!-- /doc-right -->
+ 
+        
+        <div id="doc-text">
+
+            <h2 id="doc-title"><span></span>Sample test page</h2>
+            
+            <p>Lorem ipsum dolor sit amet, <strong>consectetuer adipiscing</strong> elit. Nunc feugiat. In a massa. In feugiat pharetra lacus.
+            In non arcu nec libero pharetra rutrum. Curabitur hendrerit <a href="#">elementum diam</a>. Vestibulum mattistae sapien eu <a href="#">vehicula accumsan</a>,
+            erat quam porttitor orci, id ornare est eros et arcu. In odio. Morbi eu nisia et dolor dictum elementum. Vivamus commodo sodales felis.
+            Nulla gravida tristique metus.</p>
+            
+            <p>Lorem ipsum dolor sit amet, <strong>consectetuer adipiscing</strong> elit. Nunc feugiat. In a massa. In feugiat pharetra lacus.
+            In non arcu nec libero pharetra rutrum. Curabitur hendrerit <a href="#">elementum diam</a>. Vestibulum mattistae sapien eu <a href="#">vehicula accumsan</a>,
+            erat quam porttitor orci, id ornare est eros et arcu. In odio. Morbi eu nisia et dolor dictum elementum. Vivamus commodo sodales felis.
+            Nulla gravida tristique metus.</p>
+            
+
+        </div> <!-- /doc-text -->
+        
+    
+    </div> <!-- /doc -->
+    <div id="doc-bottom"></div>
+    
+    <hr class="noscreen">
+    
+    <hr class="noscreen">
+
+    <!-- Footer -->
+    <div id="footer">
+	        <ul class="f-right">
+					<li><a href="#"> link 1</a></li>
+					<li><a href="#"> link 2</a></li>
+	        </ul>
+
+        <p>Copyright ©&nbsp;2008 <strong><a href="#">Your Name</a></strong>, All Rights Reserved ®</p>
+
+    </div> <!-- /footer -->
+
+</div> <!-- /container -->
+
+</body>
+
+</html>

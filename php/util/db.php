@@ -1,0 +1,56 @@
+<?php
+
+
+function init_db(){
+	$host = "localhost";
+	$user = "rn_user";
+	$password = "123456";
+	$db = "rn";
+	
+	$conn = mysql_connect($host,$user,$password) or die(mysql_error());
+//	print("mysql_connect $host, $user, $password ");	
+	
+	mysql_select_db($db);
+//	print("mysql_select_db $db");	
+	return $conn;
+}
+
+function exec_query( $conn,$query){
+	$res = mysql_query($query, $conn)
+		or die(mysql_errno().', '.mysql_error());
+	
+   while ($row = mysql_fetch_assoc($res)) {
+       $return[] = $row;
+   }
+//   mysql_free_result($res);
+//   print_r($return);
+   return $return;
+}
+
+function get_tabs($conn){
+	//$query = "select name, display_name, file from pages order by page_index";
+	$query = "select name, display_name from tabs where tab_index > -1 order by tab_index";
+	return exec_query($conn, $query);
+}
+
+function get_page($conn, $page_name){
+	$query = "select page.name as name, page.display_name as title, " 
+		."page.file as file, "
+		."(select name from tabs where id = page.tab_id) as tab " 
+		."from pages page  " 
+		."where page.name='$page_name'";
+//	print("$query");
+	$res = exec_query($conn,$query);
+	
+	if(!$res){
+		return get_page($conn, "404");
+	}
+	
+	return $res[0];
+}
+
+function close_db($conn){
+	mysql_close($conn);
+}
+
+?>

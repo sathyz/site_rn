@@ -1,0 +1,3 @@
+    <script type="text/javascript" src="js/jquery.lightbox.js?show_linkback=false"></script>
+    <link rel="stylesheet"  type="text/css" href="css/jquery.lightbox.css">
+    <link rel="stylesheet"  type="text/css" href="css/gallery.css">
