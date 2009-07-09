@@ -1,1 +1,15 @@
+Slideshow
+----------
+(1) upload the image to images/slideshow
+(2) image resolution should be 225x300 (Bug#1 : if images other than this resolution are used then the slideshow will be clutterd)
+(3) create the image cache after uploading the image. To do this visit HOST/php/util/create_slide_cache.php. You should see success message.
+
+known issue: time taken to load each page is very huge since because of slideshow.
+
+
+Gallery
+-------
+(1) gallery will be avaiable under products tab
+(2) add both the thumbnail (images/thumbs/) and the source image (images/album). Name of the file should be same in both.
+(3) Add the file name in php/pages/gallery.php (FIXME)
 

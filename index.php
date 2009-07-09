@@ -26,9 +26,10 @@
 
     <title>Rainbow Novelties - <?php echo $page['title'];?></title>
     
-    <script type="text/javascript" src="scripts/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
 
  <?php
+     // include lightbox js/css files for gallery
      if($q == "gallery") include('php/include/gallery.inc');
  ?>
 
@@ -109,7 +110,7 @@ $(function() {
             <?php
             @include('./php/cache/slideshow.php');
             
-
+			// XXX: add limit for images to be loaded 
 				function print_slide(&$image, $index){
 					echo("<img src=\"images/slideshow/".$image."\" alt=\"Slideshow Image ".$index."\" />");				
 				}         
@@ -126,7 +127,7 @@ $(function() {
             <h2 id="doc-title"><span></span> <?php echo $page['title']?></h2>
             
             <?php
-            if(!@include($PAGES_DIR.$page['file']))
+            if(!include($PAGES_DIR.$page['file']))
 	            echo "Page under construction";
 	         // the file is not present...
             ?>
