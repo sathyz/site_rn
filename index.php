@@ -23,10 +23,12 @@
     <link rel="stylesheet"  type="text/css" href="css/reset.css">
     <link rel="stylesheet"  type="text/css" href="css/main.css">
     <link rel="stylesheet"  type="text/css" href="css/style.css">
+    <link rel="stylesheet"  type="text/css" href="css/ticker.css">
 
     <title>Rainbow Novelties - <?php echo $page['title'];?></title>
     
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.li-scroller.1.0.js"></script>
 
  <?php
      // include lightbox js/css files for gallery
@@ -67,6 +69,7 @@ function slideSwitch() {
 
 $(function() {
     setInterval( "slideSwitch()", 5000 );
+    $("ul#ticker01").liScroll(); // scroll the logos
 });
 
 </script>
@@ -141,6 +144,12 @@ $(function() {
     <hr class="noscreen">
     
     <hr class="noscreen">
+    
+    <div id="ticker">
+      <?php
+        include("php/pages/ticker.php"); 
+      ?>
+    </div>
 
     <!-- Footer -->
     <div id="footer">

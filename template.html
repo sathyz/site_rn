@@ -9,12 +9,13 @@
     <meta name="description" content="Rainbow Novelties specialises in all kinds of bags..">
     <meta name="keywords" content="novelties, bags, rainbow">
 
-    <link rel="stylesheet"  type="text/css" href="/test/css/reset.css">
-    <link rel="stylesheet"  type="text/css" href="/test/css/main.css">
-    <link rel="stylesheet"  type="text/css" href="/test/css/style.css">
-
+    <link rel="stylesheet"  type="text/css" href="css/reset.css">
+    <link rel="stylesheet"  type="text/css" href="css/main.css">
+    <link rel="stylesheet"  type="text/css" href="css/style.css">
+    <link rel="stylesheet"  type="text/css" href="css/ticker.css">
     <title>Rainbow Novelties</title>
-    <script type="text/javascript" src="scripts/jquery-1.2.6.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.li-scroller.1.0.js"></script>
 
 <script type="text/javascript">
 
@@ -50,6 +51,7 @@ function slideSwitch() {
 
 $(function() {
     setInterval( "slideSwitch()", 5000 );
+    $("ul#ticker01").liScroll();
 });
 
 </script>
@@ -126,7 +128,26 @@ $(function() {
     <hr class="noscreen">
     
     <hr class="noscreen">
-
+    
+    <div id="ticker" class="box">
+      <ul id="ticker01">
+    <li><img src="images/ticker/Accenture.jpeg"></li>
+    <li><img src="images/ticker/bosch.jpg"></li>
+    <li><img src="images/ticker/DELL.jpg"></li>
+    <li><img src="images/ticker/hpLogo.jpeg"></li>
+    <li><img src="images/ticker/ibm.png"></li>
+    <li><img src="images/ticker/iimb logo8914.jpg"></li>
+    <li><img src="images/ticker/Infosys-logo.jpg"></li>
+    <li><img src="images/ticker/JockeyLogo1.jpg"></li>
+    <li><img src="images/ticker/levis_logo_ver.jpg"></li>
+    <li><img src="images/ticker/logo.gif"></li>
+    <li><img src="images/ticker/madura_garments_logo.gif"></li>
+    <li><img src="images/ticker/tanishq-logo.jpg"></li>
+    <li><img src="images/ticker/vmware-logo.jpg"></li>
+    <li><img src="images/ticker/wipro.jpg"></li>
+<!-- eccetera -->
+      </ul>
+    </div>
     <!-- Footer -->
     <div id="footer">
 	        <ul class="f-right">
