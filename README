@@ -12,4 +12,9 @@ Gallery
 (1) gallery will be avaiable under products tab
 (2) add both the thumbnail (images/thumbs/) and the source image (images/album). Name of the file should be same in both.
 (3) Add the file name in php/pages/gallery.php (FIXME)
+(4) Resolutions - thumbnail:75x100, images: less than 800x600 for better look and feel.
 
+Ticker
+------
+(1) location images/ticker
+(2) resolution : x75 ( height should be 75px)
