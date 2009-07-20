@@ -1,21 +1,21 @@
-.section {
-    margin-top: 15px;
-    margin-left: 5%;
+.album {
+    margin-left: 150px;
+    /*margin-top: 15px;
     margin-right: 5%;
     padding: 5px;
-    padding-bottom: 0px;
+    padding-bottom: 0px;*/
 }
 
-.section ul {
+.album ul {
     list-style: none;
     margin-top: 5px;
 }
 
-.section ul li {
+.album ul li {
     display: inline;
 }
 
-.section ul a {
+.album ul a {
     background-color: #ECECEC;
     border: 1px solid #999999;
     padding: 5px 5px 10px;
@@ -24,16 +24,23 @@
     margin: 5px;
 }
 
-.section ul a:hover {
+.album ul a:hover {
     background-color: #FFFFFF;
     border: 1px solid #333333;
 }
 
-.section ul a img {
+.album ul a img {
     border: 1px solid #999999;
 }
 
-.section ul a.lightbox-enabled img {
+.album ul a.lightbox-enabled img {
     border: 1px dotted #999999;
 }
 
+#gal-container{
+    min-height:100px;
+}
+
+#prod-list{
+   position: absolute;   
+}

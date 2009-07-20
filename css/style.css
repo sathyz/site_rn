@@ -39,7 +39,7 @@ a:hover {color:#000;}
     #nav span {color:#DDD;}
     #nav #nav-active {color:#a0a186;}
 
-    #menu {background-color:#BFBFBF;}
+    #menu {}
     #menu li a {color:#404040;}
     #menu li#menu-active a {background-color:#e50; color:#FFF;}
     #menu li a:hover {background-color:#9F9F9F; color:#FFF;}

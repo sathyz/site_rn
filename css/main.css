@@ -44,15 +44,15 @@ ul.ul-list span.date {padding-right:10px;}
 
 #main {width:960px; margin:0 auto; overflow:hidden;}
 
-    #header {position:relative; height:90px; padding:30px 20px 15px 20px;}
+    #header {position:relative; height:90px;margin-top:5px; }
 
-        #logo {margin:0;}
+        #logo {margin:0; float:left;}
     
         #nav {position:absolute; top:80px; right:20px; margin:0;}
         #nav span {margin:0 8px;}
         #nav #nav-active {font-weight:bold; text-decoration:none;}
     
-    #menu {position:relative; width:960px; height:45px; background:url("../design/menu.gif") 0 0 no-repeat; overflow:hidden; font:bold 90%/1 "tahoma",sans-serif;}
+    #menu {margin-top:45px;position:relative; width:auto;float:right; height:45px; background:url("../design/menu.gif") 0 0 no-repeat; overflow:hidden; font:bold 90%/1 "tahoma",sans-serif;}
     #menu ul {margin:0 20px; list-style:none;}
     #menu li {display:inline;}
     #menu li a {display:block; float:left; padding:17px 20px 17px 18px; background:url("../design/menu-separator.gif") 100% 0 no-repeat; text-decoration:none;}
@@ -66,7 +66,7 @@ ul.ul-list span.date {padding-right:10px;}
         #search #search-input input {width:136px; margin:8px; border:0; font:100%/1 "arial",sans-serif;}
         #search #search-submit {position:absolute; top:0; right:0; width:30px;}
 
-    #footer {clear:both; padding:20px 20px 40px 20px; font-size:85%;}
+    #footer {clear:both; padding:0px 20px 0px 20px; font-size:85%;}
     #footer p {margin:0;}
     #footer li {display:inline;}
 
@@ -76,14 +76,15 @@ ul.ul-list span.date {padding-right:10px;}
 
 #doc-top {width:960px; height:5px; margin-top:15px; background:url("../design/col-top.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
 #doc-bottom {width:960px; height:5px; margin-bottom:15px; background:url("../design/col-bottom.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
-#doc {position:relative; padding:15px 30px 15px 20px; background:url("../design/col.gif") 0 0 repeat-y;}
+#doc {height:auto; position:relative; padding:15px 30px 15px 20px; background:url("../design/col.gif") 0 0 repeat-y;}
 
     #ribbon {position:absolute; top:-5px; left:0; width:100px; height:100px; background:url("../design/ribbon.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden; z-index:10;}
 
     #doc-browser {position:relative; float:left; width:280px; height:215px; background:url("../design/browser.gif") 0 0 no-repeat;}
     #doc-browser img {position:absolute; top:28px; left:10px;}
 
-    #doc-text {float:right; width:600px; padding-top:15px; line-height:1.7;}
+    #doc-text {padding-top:15px; line-height:1.7;}
+    .with-slideshow{float:right; width:600px}
 
         #slogan {position:relative; width:289px; height:33px; overflow:hidden; margin:0; padding:0; font-size:180%;}
         #slogan span {display:block; position:absolute; top:0; left:0; z-index:1; width:100%; height:100%; margin:0; padding:0; background:url("../tmp/slogan.gif") 0 0 no-repeat;}
@@ -100,7 +101,7 @@ ul.ul-list span.date {padding-right:10px;}
 				
 				#slideshow {
 				    position:relative;
-				    height:350px;
+				    height:300px;
 				}
 				
 				#slideshow IMG {

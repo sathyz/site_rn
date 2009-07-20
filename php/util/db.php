@@ -49,6 +49,12 @@ function get_page($conn, $page_name){
 	return $res[0];
 }
 
+function get_bag_types($conn){
+        $query = "select name as name,code as code from bag_types";
+//                 "order by lower(name)";
+        return exec_query($conn, $query);
+}
+
 function close_db($conn){
 	mysql_close($conn);
 }
