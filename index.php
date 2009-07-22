@@ -5,7 +5,6 @@
    $conn = init_db();
    $page = get_page($conn,$q);
    $tabs = get_tabs($conn);
-   close_db($conn);
    //page - file, name, display_name
 ?>
 
@@ -32,6 +31,7 @@
      $show_slideshow = ($q== "home");
 
      if($show_ticker or $show_slideshow) include('php/include/home.inc');
+     if($q == "products") include('php/include/products.inc');
  ?>
 
     <title>Rainbow Novelties - <?php echo $page['title'];?></title>
@@ -105,5 +105,7 @@
                <p>Copyright ©&nbsp;2008 <strong><a href="#">Rainbow Novelties</a></strong>, All Rights Reserved ®</p>
             </div> <!-- /footer -->
         </div> <!--/page-->
+
+<?php close_db($conn); ?>
 </body>
 </html>

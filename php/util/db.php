@@ -55,6 +55,11 @@ function get_bag_types($conn){
         return exec_query($conn, $query);
 }
 
+function get_images($conn, $model){
+	$query = "select file from bags where model='$model' and file is not null";
+	return exec_query($conn, $query);
+}
+
 function close_db($conn){
 	mysql_close($conn);
 }

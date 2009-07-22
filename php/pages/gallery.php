@@ -1,34 +1,26 @@
-<div id="gallery" class="section">
   <ul>
     <?php
         // XXX allow easy way for admin to add images
         // how about using DB?
-	$images = array(
-	'1_1.jpg',
-	'1_2.jpg',
-	'1_3.jpg',
-	'2_1.jpg',
-	'2_2.jpg',
-	'3_1.jpg',
-	'G1.jpg',
-	'G2.jpg',
-	);       
-
+        include('../util/db.php');
+        $conn = init_db();
+	$images = get_images($conn, $_REQUEST['model']);
+	close_db($conn);
 	$dir = array(
-	'album' => 'images/album/',
-	'thumbs' => 'images/thumbs/',
+	'album' => '/test/images/album/',
+	'thumbs' => '/test/images/thumbs/',
 	);
 
-
+        if($images){
 	foreach($images as $image){
           // FIXME handle pagination
           // FIXME remove footer for the image on zooming ( it has NaN and caption as Untitled which looks ugly)
 	  echo "<li> "
-	       	  ."<a href=$dir[album]$image rel=lightbox[gallery]>"
-                    ."<img src=$dir[thumbs]$image>"
+	       	  ."<a href=$dir[album]$image[file] rel=lightbox[gallery]>"
+                    ."<img src=$dir[thumbs]$image[file]>"
                   ."</a>"
                ."</li>";
 	}
+	}
     ?>
   </ul>
-</div>

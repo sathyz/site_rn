@@ -44,15 +44,15 @@ ul.ul-list span.date {padding-right:10px;}
 
 #main {width:960px; margin:0 auto; overflow:hidden;}
 
-    #header {position:relative; height:90px;margin-top:5px; }
+    #header {position:relative; height:45px;}
 
-        #logo {margin:0; float:left;}
+        #logo {margin:0; display:none;}
     
         #nav {position:absolute; top:80px; right:20px; margin:0;}
         #nav span {margin:0 8px;}
         #nav #nav-active {font-weight:bold; text-decoration:none;}
     
-    #menu {margin-top:45px;position:relative; width:auto;float:right; height:45px; background:url("../design/menu.gif") 0 0 no-repeat; overflow:hidden; font:bold 90%/1 "tahoma",sans-serif;}
+    #menu {margin-top:45px;position:relative; width:960px; height:45px; background:url("../design/menu.gif") 0 0 no-repeat; overflow:hidden; font:bold 90%/1 "tahoma",sans-serif;}
     #menu ul {margin:0 20px; list-style:none;}
     #menu li {display:inline;}
     #menu li a {display:block; float:left; padding:17px 20px 17px 18px; background:url("../design/menu-separator.gif") 100% 0 no-repeat; text-decoration:none;}
@@ -95,7 +95,7 @@ ul.ul-list span.date {padding-right:10px;}
 #docs2 {background:url("../design/cols2.gif") 0 0 repeat-y;}
 
     #docs2 #doc-left {float:left; width:595px; padding:20px;}
-    #doc-right {width: 20%; float: left; margin-right:1px; padding:20px;}
+    #doc-right {width: 225px; float: left; margin-right:1px; padding:20px;}
         
 				/*** set the width and height to match your images **/
 				
