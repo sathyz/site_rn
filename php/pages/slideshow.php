@@ -1,8 +1,7 @@
 <!-- Image slideshow -->
-<div id="doc-right">
-    <div id="slideshow" class="box" >
+    <div id="slideshow" class="lpane">
         <?php
-            // show loading data.. 
+            //XXX show loading data.. 
             if($show_slideshow){
                 @include('./php/cache/slideshow.php');
 
@@ -15,4 +14,3 @@
             }
         ?>
     </div> <!-- /slideshow -->
-</div> <!-- /doc-right -->

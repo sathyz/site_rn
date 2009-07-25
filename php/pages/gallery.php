@@ -11,7 +11,8 @@
 	'thumbs' => '/test/images/thumbs/',
 	);
 
-        if($images){
+    if($images){
+            echo("<ul class='ul-bags'");
 	foreach($images as $image){
           // FIXME handle pagination
           // FIXME remove footer for the image on zooming ( it has NaN and caption as Untitled which looks ugly)
@@ -20,7 +21,8 @@
                     ."<img src=$dir[thumbs]$image[file]>"
                   ."</a>"
                ."</li>";
-	}
+    }
+            echo("</ul> <!-- / ul-bags-->");
 	}
     ?>
   </ul>

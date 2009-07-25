@@ -1,111 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <?php
-   include("php/util/db.php");
-   $q = isset($_REQUEST["page"])?$_REQUEST["page"]:"home" ;
-   $PAGES_DIR = "./php/pages/";
-   $conn = init_db();
-   $page = get_page($conn,$q);
-   $tabs = get_tabs($conn);
-   //page - file, name, display_name
+include('php/util/db.php');
+$q = isset($_REQUEST["page"])?$_REQUEST["page"]:"home" ;
+$PAGES_DIR = "./php/pages/";
+$conn = init_db();
+$page = get_page($conn,$q);
+$tabs = get_tabs($conn);
+//page - file, name, display_name
+
+$show_ticker = ($q == "home");
+$show_slideshow = ($q== "home");
 ?>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="content-language" content="en">
-    <meta name="robots" content="all,follow">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="robots" content="all,follow" />
 
-    <meta name="author" content="skumar"lang="en">
+    <meta name="author" lang="en" content="All: Satheesh Kumar M [sathyz.wordpress.com]; e-mail: sathyz@gmail.com" />
 
-    <meta name="description" content="Rainbow Novelties specialises in all kinds of bags..">
-    <meta name="keywords" content="novelties, bags, rainbow">
+    <meta name="description" content="..." />
+    <meta name="keywords" content="..." />
 
-    <link rel="stylesheet"  type="text/css" href="css/reset.css">
-    <link rel="stylesheet"  type="text/css" href="css/main.css">
-    <link rel="stylesheet"  type="text/css" href="css/style.css">
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="css/main.css" />
+    <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="css/main-msie.css" /><![endif]-->
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" media="print" type="text/css" href="css/print.css" />
 
- <?php
-     // include lightbox js/css files for gallery
-     //if($q == "gallery") include('php/include/gallery.inc');     
-     
-     $show_ticker = ($q == "home");
-     $show_slideshow = ($q== "home");
-
-     if($show_ticker or $show_slideshow) include('php/include/home.inc');
-     if($q == "products") include('php/include/products.inc');
- ?>
-
+    <?php
+        if($show_ticker or $show_slideshow) include('php/include/home.inc');
+        if($q == "products") include('php/include/products.inc');
+    ?>
+    
     <title>Rainbow Novelties - <?php echo $page['title'];?></title>
 </head>
+
 <body>
-    <div id="page">
-    <!-- Container -->
-        <div id="main">
 
-            <!-- Header -->
-            <div id="header">
+<div id="main">
 
-                 <div id="logo">
-                     <a href="./" title="Go to Rainbow Novelties homepage"><img src="images/logo.gif" alt="Rainbow Novelties"></a>
-                 </div>
-                 <hr class="noscreen">
-                 <!-- /nav -->
+    <!-- Header -->
+    <div id="header">
 
-                 <!-- Menu -->
-                 <div id="menu">
-                     <ul>
+
+
+    </div> <!-- /header -->
+    
+    <!-- Tray -->
+    <div id="tray">
+
+        <ul>
                          <?php
                              foreach($tabs as $tab){
-                                 print("<li ".($tab['name']==$page['tab']? "id=menu-active":"") ."><a href=index.php?page=$tab[name]>$tab[display_name]</a></li>");
+                                 print("<li ".($tab['name']==$page['tab']? "id=tray-active":"") 
+                                         ."><a href=index.php?page=$tab[name]>$tab[display_name]</a></li>");
                              }
                          ?>
-                     </ul>
+        </ul>
+        
+        <!-- Search -->
+        <div id="search" class="box">
+            <form action="#" method="get">
+                <div class="box">
+                    <div id="search-input"><span class="noscreen">Search:</span><input type="text" size="30" name="" value="Search" /></div>
+                    <div id="search-submit"><input type="image" src="design/search-submit.gif" value="OK" /></div>
+                </div>
+            </form>
+        </div> <!-- /search -->
 
-                     <hr class="noscreen">
-                 </div> <!-- /menu -->
-            </div> <!-- /header -->
+    <hr class="noscreen" />
+    </div> <!-- /tray -->
 
+    <!-- Promo -->
+    <div id="col-top"></div>
+    <div id="col" class="box">
+    
+        
+        <!-- space for slideshow -->
+        <?php 
+        $split_page = true;
+        if($show_slideshow) include("php/pages/slideshow.php"); 
+        elseif($q=="products") include("php/pages/products-list.php");
+        else $split_page = false; // if not any of the above cases
+        ?>
 
-            <!-- Page document -->
-            <div id="doc-top"></div>
-            <div id="doc" class="box">
-                <?php if($show_slideshow) include("php/pages/slideshow.php"); ?>
+        <div id="col-text" <?php if($split_page) print("class=rpane")?>>
 
-                <div id="doc-text" <?php if($show_slideshow) echo "class=with-slideshow"; ?>>
-                    <h2 id="doc-title"><span></span> <?php echo $page['title']; ?></h2>
-
-                    <?php
-                        if(!@include($PAGES_DIR.$page['file']))
-	                    echo "Page under construction";
-	                    // the file is not present...
-                    ?>
-
-                </div> <!-- /doc-text -->
-
-            </div> <!-- /doc -->
-            
-            <div id="doc-bottom"></div>
-            <hr class="noscreen">
-            <hr class="noscreen">
-	    <div id="ticker">
+                <h2 id="slogan"><span></span><?php echo $page['title']; ?></h2>
                 <?php
-		    if($show_ticker) include("php/pages/ticker.php");
-		?>
-	    </div>
-        </div> <!-- /container -->
+                    if(!@include($PAGES_DIR.$page['file']))
+                    echo "Page under construction";
+                    // the file is not present...
+                ?>      
+        </div> <!-- /col-text -->
+    
+    </div> <!-- /col -->
+    <div id="col-bottom"></div>
+    
+    <hr class="noscreen" />
+    
 
-            <!-- Footer -->
-            <div id="footer">
-	       <ul class="f-right">
-	           <li><a href="#">Privacy Policy</a></li>
-		   <li><a href="#">Legal Disclaimer</a></li>
-		   <li><a href="#">Terms of Use</a></li>
-		   <li><a href="#">Site map</a></li>
-	       </ul>
+    <!-- Footer -->
+    <div id="footer">
+        <?php
+        if($show_ticker) include("php/pages/ticker.php");
+        ?>
+        <!-- Do you want remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
+        <p class="f-right">
+        <a href="#">Private Policy</a>
+        <a href="#">Legal Displaimer</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Site map</a>
+        </p>
+        <!-- Do you want remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
 
-               <p>Copyright ©&nbsp;2008 <strong><a href="#">Rainbow Novelties</a></strong>, All Rights Reserved ®</p>
-            </div> <!-- /footer -->
-        </div> <!--/page-->
+        <p>Copyright &copy;&nbsp;2008 <strong><a href="#">Rainbow Novelties</a></strong>, All Rights Reserved &reg;</p>
 
-<?php close_db($conn); ?>
+    </div> <!-- /footer -->
+
+</div> <!-- /main -->
+<?php close_db($conn);?>
 </body>
 </html>

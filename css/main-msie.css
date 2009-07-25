@@ -41,7 +41,7 @@ table {font-size:100%;}
 4-1) Page: Homepage
 ---------------------------------------------------------------------------------------------------------- */
 
-    .col {width:310px;}
+    .col {width:310px;height:320px;}
     .col.last {margin-right:-3px;}
 
     #docs2 #doc-left {width:635px; padding:20px;}

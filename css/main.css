@@ -44,20 +44,20 @@ ul.ul-list span.date {padding-right:10px;}
 
 #main {width:960px; margin:0 auto; overflow:hidden;}
 
-    #header {position:relative; height:45px;}
+    #header {position:relative; /*height:90px;*/ padding:30px 20px 15px 20px;}
 
-        #logo {margin:0; display:none;}
+        #logo {margin:0;}
     
         #nav {position:absolute; top:80px; right:20px; margin:0;}
         #nav span {margin:0 8px;}
         #nav #nav-active {font-weight:bold; text-decoration:none;}
     
-    #menu {margin-top:45px;position:relative; width:960px; height:45px; background:url("../design/menu.gif") 0 0 no-repeat; overflow:hidden; font:bold 90%/1 "tahoma",sans-serif;}
-    #menu ul {margin:0 20px; list-style:none;}
-    #menu li {display:inline;}
-    #menu li a {display:block; float:left; padding:17px 20px 17px 18px; background:url("../design/menu-separator.gif") 100% 0 no-repeat; text-decoration:none;}
-    #menu li a:hover {background:url("../design/menu-hover.gif");}
-    #menu li#menu-active a {background:url("../design/menu-active.gif");}
+    #tray {position:relative; width:960px; height:45px; background:url("../design/tray.gif") 0 0 no-repeat; overflow:hidden; font:bold 90%/1 "tahoma",sans-serif;}
+    #tray ul {margin:0 20px; list-style:none;}
+    #tray li {display:inline;}
+    #tray li a {display:block; float:left; padding:17px 20px 17px 18px; background:url("../design/tray-separator.gif") 100% 0 no-repeat; text-decoration:none;}
+    #tray li a:hover {background:url("../design/tray-hover.gif");}
+    #tray li#tray-active a {background:url("../design/tray-active.gif");}
 
         #search {position:absolute; top:8px; right:20px;}
         #search div {position:relative; width:185px;}
@@ -66,76 +66,51 @@ ul.ul-list span.date {padding-right:10px;}
         #search #search-input input {width:136px; margin:8px; border:0; font:100%/1 "arial",sans-serif;}
         #search #search-submit {position:absolute; top:0; right:0; width:30px;}
 
-    #footer {clear:both; padding:0px 20px 0px 20px; font-size:85%;}
+    #footer {clear:both; padding:20px 20px 40px 20px; font-size:85%;}
     #footer p {margin:0;}
-    #footer li {display:inline;}
 
 /* ----------------------------------------------------------------------------------------------------------
 4-1) Page: Homepage
 ---------------------------------------------------------------------------------------------------------- */
 
-#doc-top {width:960px; height:5px; margin-top:15px; background:url("../design/col-top.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
-#doc-bottom {width:960px; height:5px; margin-bottom:15px; background:url("../design/col-bottom.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
-#doc {height:auto; position:relative; padding:15px 30px 15px 20px; background:url("../design/col.gif") 0 0 repeat-y;}
+#col-top {width:960px; height:5px; margin-top:15px; background:url("../design/col-top.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
+#col-bottom {width:960px; height:5px; margin-bottom:15px; background:url("../design/col-bottom.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
+#col {position:relative; padding:15px 30px 15px 20px; background:url("../design/col.gif") 0 0 repeat-y;min-height:320px; }
 
     #ribbon {position:absolute; top:-5px; left:0; width:100px; height:100px; background:url("../design/ribbon.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden; z-index:10;}
+    /* left side pane for the page  */
+    .lpane {position:relative; float:left; width:280px; height:215px; }
+    .lpane img {position:absolute; top:28px; left:10px;}
 
-    #doc-browser {position:relative; float:left; width:280px; height:215px; background:url("../design/browser.gif") 0 0 no-repeat;}
-    #doc-browser img {position:absolute; top:28px; left:10px;}
-
-    #doc-text {padding-top:15px; line-height:1.7;}
-    .with-slideshow{float:right; width:600px}
+    #col-text { padding-top:15px; line-height:1.7;}
+      .rpane{float:right; width:600px;}
 
         #slogan {position:relative; width:289px; height:33px; overflow:hidden; margin:0; padding:0; font-size:180%;}
         #slogan span {display:block; position:absolute; top:0; left:0; z-index:1; width:100%; height:100%; margin:0; padding:0; background:url("../tmp/slogan.gif") 0 0 no-repeat;}
         #btns {margin-top:25px; margin-bottom:0;}
 
-#docs2-top {width:960px; height:5px; margin-top:15px; background:url("../design/cols2-top.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
-#docs2-bottom {width:960px; height:5px; margin-bottom:15px; background:url("../design/cols2-bottom.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
-#docs2 {background:url("../design/cols2.gif") 0 0 repeat-y;}
+#cols2-top {width:960px; height:5px; margin-top:15px; background:url("../design/cols2-top.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
+#cols2-bottom {width:960px; height:5px; margin-bottom:15px; background:url("../design/cols2-bottom.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
+#cols2 {background:url("../design/cols2.gif") 0 0 repeat-y;}
 
-    #docs2 #doc-left {float:left; width:595px; padding:20px;}
-    #doc-right {width: 225px; float: left; margin-right:1px; padding:20px;}
-        
-				/*** set the width and height to match your images **/
-				
-				#slideshow {
-				    position:relative;
-				    height:300px;
-				}
-				
-				#slideshow IMG {
-				    position:absolute;
-				    top:0;
-				    left:0;
-				    z-index:8;
-				    opacity:0.0;
-				}
-				
-				#slideshow IMG.active {
-				    z-index:10;
-				    opacity:1.0;
-				}
-				
-				#slideshow IMG.last-active {
-				    z-index:9;
-				}
+    #cols2 #col-left {float:left; width:595px; padding:20px;}
+    #cols2 #col-right {float:right; width:268px; margin-right:1px; padding:20px;}
+    
+        #cols2 #col-left h4, #cols2 #col-right h4 {margin:0; font-size:100%;}
+        #cols2 #col-left .title {background:url("../design/dot.gif") 0 50% repeat-x;}
+        #cols2 #col-left .title h4 {display:inline; padding-right:10px;}
+        #cols2 #col-left .title span {padding-left:10px;}
 
-        #docs2 #doc-left h4, #docs2 #doc-right h4 {margin:0; font-size:100%;}
-        #docs2 #doc-left .title {background:url("../design/dot.gif") 0 50% repeat-x;}
-        #docs2 #doc-left .title h4 {display:inline; padding-right:10px;}
-        #docs2 #doc-left .title span {padding-left:10px;}
+        #cols2 .box {margin-top:15px;}
+        #cols2 #col-right h4 {background:url("../design/dot-02.gif") 0 50% repeat-x;}
+        #cols2 #col-right h4 span {padding-right:10px;}
+        #cols2 .col-right-img {float:left; width:65px;}
+        #cols2 .col-right-text {float:right; width:190px;}
+        #cols2 .col-right-text p {margin:0;}
 
-        #docs2 .box {margin-top:15px;}
-        #docs2 #doc-right h4 {background:url("../design/dot-02.gif") 0 50% repeat-x;}
-        #docs2 #doc-right h4 span {padding-right:10px;}
-        #docs2 .col-right-img {float:left; width:65px;}
-        #docs2 .col-right-text {float:right; width:190px;}
-        #docs2 .col-right-text p {margin:0;}
-
-#docs3-top {width:960px; height:5px; margin-top:15px; background:url("../design/cols3-top.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
-#docs3-bottom {width:960px; height:5px; margin-bottom:15px; background:url("../design/cols3-bottom.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
-#docs3 {background:url("../design/cols3.gif") 0 0 repeat-y;}
+#cols3-top {width:960px; height:5px; margin-top:15px; background:url("../design/cols3-top.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
+#cols3-bottom {width:960px; height:5px; margin-bottom:15px; background:url("../design/cols3-bottom.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden;}
+#cols3 {background:url("../design/cols3.gif") 0 0 repeat-y;}
 
     .col {float:left; width:308px; padding:0 1px; margin-right:15px;}
     .col.last {margin-right:0;}
