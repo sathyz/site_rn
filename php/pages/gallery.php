@@ -1,28 +1,30 @@
-  <ul>
     <?php
         // XXX allow easy way for admin to add images
         // how about using DB?
-        include('../util/db.php');
-        $conn = init_db();
-	$images = get_images($conn, $_REQUEST['model']);
-	close_db($conn);
+// include('../util/db.php');
+
+function get_images_data($conn,$model){
+	$images = get_images($conn, $model);
+	//close_db($conn);
 	$dir = array(
 	'album' => '/test/images/album/',
 	'thumbs' => '/test/images/thumbs/',
 	);
-
+    
+    $data = '';
     if($images){
-            echo("<ul class='ul-bags'");
+            $data .= "<ul class='ul-bags'";
 	foreach($images as $image){
           // FIXME handle pagination
           // FIXME remove footer for the image on zooming ( it has NaN and caption as Untitled which looks ugly)
-	  echo "<li> "
-	       	  ."<a href=$dir[album]$image[file] rel=lightbox[gallery]>"
+	  $data .= "<li> "
+	       	  ."<a href=$dir[album]$image[file] rel=lightbox-bags>"
                     ."<img src=$dir[thumbs]$image[file]>"
                   ."</a>"
                ."</li>";
     }
-            echo("</ul> <!-- / ul-bags-->");
-	}
+            $data .= "</ul> <!-- / ul-bags-->";
+    }
+    return $data;
+}
     ?>
-  </ul>

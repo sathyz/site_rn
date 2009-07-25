@@ -1,25 +1,13 @@
+<?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<?php
-include('php/util/db.php');
-$q = isset($_REQUEST["page"])?$_REQUEST["page"]:"home" ;
-$PAGES_DIR = "./php/pages/";
-$conn = init_db();
-$page = get_page($conn,$q);
-$tabs = get_tabs($conn);
-//page - file, name, display_name
-
-$show_ticker = ($q == "home");
-$show_slideshow = ($q== "home");
-?>
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="content-language" content="en" />
     <meta name="robots" content="all,follow" />
 
-    <meta name="author" lang="en" content="All: Satheesh Kumar M [sathyz.wordpress.com]; e-mail: sathyz@gmail.com" />
+    <meta name="author" lang="en" content="All: Your name [www.url.com]; e-mail: info@url.com" />
+    <meta name="copyright" lang="en" content="Webdesign: Nuvio [www.nuvio.cz]; e-mail: ahoj@nuvio.cz" />
 
     <meta name="description" content="..." />
     <meta name="keywords" content="..." />
@@ -29,13 +17,14 @@ $show_slideshow = ($q== "home");
     <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="css/main-msie.css" /><![endif]-->
     <link rel="stylesheet" media="screen,projection" type="text/css" href="css/style.css" />
     <link rel="stylesheet" media="print" type="text/css" href="css/print.css" />
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="css/gallery.css" />
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="css/slimbox2.css" />
 
-    <?php
-        if($show_ticker or $show_slideshow) include('php/include/home.inc');
-        if($q == "products") include('php/include/products.inc');
-    ?>
-    
-    <title>Rainbow Novelties - <?php echo $page['title'];?></title>
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"> </script>
+    <script type="text/javascript" src="js/slimbox2.js"> </script>
+
+
+    <title>Impress</title>
 </head>
 
 <body>
@@ -53,12 +42,15 @@ $show_slideshow = ($q== "home");
     <div id="tray">
 
         <ul>
-                         <?php
-                             foreach($tabs as $tab){
-                                 print("<li ".($tab['name']==$page['tab']? "id=tray-active":"") 
-                                         ."><a href=index.php?page=$tab[name]>$tab[display_name]</a></li>");
-                             }
-                         ?>
+            <li id="tray-active"><a href="#">Home</a></li> <!-- Active page -->
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">B2B</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Blogs</a></li>
+
         </ul>
         
         <!-- Search -->
@@ -79,26 +71,21 @@ $show_slideshow = ($q== "home");
     <div id="col" class="box">
     
         
-        <!-- space for slideshow -->
-        <?php 
-        $split_page = true;
-        if($show_slideshow) include("php/pages/slideshow.php"); 
-        elseif($q=="products") include("php/pages/products-list.php");
-        else $split_page = false; // if not any of the above cases
-        ?>
-
-        <div id="col-text" <?php if($split_page) print("class=rpane")?>>
-
-                <h2 id="slogan"><span></span><?php echo $page['title']; ?></h2>
-                <?php
-                    if($q=="products" and isset($_REQUEST['model'])){
-                            include($PAGES_DIR.'gallery.php');
-                            print(get_images_data($conn, $_REQUEST['model']));
-                    }elseif(!@include($PAGES_DIR.$page['file'])){
-                             echo "Page under construction";
-                    }
-                    // the file is not present...
-                ?>      
+        <!-- Screenshot in browser (replace tmp/browser.gif) -->
+        <div id="products-list" class="lpane">
+                <ul class="ul-01">
+                <li><a href="#">Laptop Bags</a></li>
+                <li><a href="#">Ladies Bags</a></li>
+                <li><a href="#">Travel Bags</a></li>
+                <li><a href="#">School Bags</a></li>
+        </ul>
+        </div> 
+        
+        <div id="col-text" class="rpane">
+                <ul class="ul-bags">
+                        <li> <a href="images/album/FI/FI0010202.jpg" rel="lightbox-bags"><img src="images/thumbs/FI/FI001022.jpg"></a> </li>
+                        <li> <a href="images/album/FI/FI0020202.jpg" rel="lightbox-bags"><img src="images/thumbs/FI/FI002022.jpg"></a> </li>
+                </ul>
         </div> <!-- /col-text -->
     
     </div> <!-- /col -->
@@ -109,9 +96,8 @@ $show_slideshow = ($q== "home");
 
     <!-- Footer -->
     <div id="footer">
-        <?php
-        if($show_ticker) include("php/pages/ticker.php");
-        ?>
+    
+
         <!-- Do you want remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
         <p class="f-right">
         <a href="#">Private Policy</a>
@@ -126,6 +112,6 @@ $show_slideshow = ($q== "home");
     </div> <!-- /footer -->
 
 </div> <!-- /main -->
-<?php close_db($conn);?>
+
 </body>
 </html>
