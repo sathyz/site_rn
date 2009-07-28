@@ -9,8 +9,7 @@ $page = get_page($conn,$q);
 $tabs = get_tabs($conn);
 //page - file, name, display_name
 
-$show_ticker = ($q == "home");
-$show_slideshow = ($q== "home");
+$show_ticker = $show_slideshow = ($q == "home");
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
