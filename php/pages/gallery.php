@@ -13,13 +13,12 @@ function get_images_data($conn,$model){
     
     $data = '';
     if($images){
-            $data .= "<ul class='ul-bags'";
+            $data .= "<ul class='ul-bags' id='thumbs_ul'>";
 	foreach($images as $image){
           // FIXME handle pagination
-          // FIXME remove footer for the image on zooming ( it has NaN and caption as Untitled which looks ugly)
 	  $data .= "<li> "
 	       	  ."<a href=$dir[album]$image[file] rel=lightbox-bags>"
-                    ."<img src=$dir[thumbs]$image[file]>"
+                    ."<img class='thumb_img' src=$dir[thumbs]$image[file]>"
                   ."</a>"
                ."</li>";
     }

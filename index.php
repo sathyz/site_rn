@@ -82,7 +82,6 @@ $show_ticker = $show_slideshow = ($q == "home");
         <?php 
         $split_page = true;
         if($show_slideshow) include("php/pages/slideshow.php"); 
-        elseif($q=="products") include("php/pages/products-list.php");
         else $split_page = false; // if not any of the above cases
         ?>
 
@@ -90,10 +89,7 @@ $show_ticker = $show_slideshow = ($q == "home");
 
                 <h2 id="slogan"><span></span><?php echo $page['title']; ?></h2>
                 <?php
-                    if($q=="products" and isset($_REQUEST['model'])){
-                            include($PAGES_DIR.'gallery.php');
-                            print(get_images_data($conn, $_REQUEST['model']));
-                    }elseif(!@include($PAGES_DIR.$page['file'])){
+                    if(!include($PAGES_DIR.$page['file'])){
                              echo "Page under construction";
                     }
                     // the file is not present...
