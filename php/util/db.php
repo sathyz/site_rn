@@ -1,11 +1,12 @@
 <?php
-
+define('SETTINGS','php/config/settings.ini');
 
 function init_db(){
-	$host = "localhost";
-	$user = "rn_user";
-	$password = "123456";
-	$db = "rn";
+        $ini = parse_ini_file(SETTINGS,true);
+	$host = $ini['db']['host'];
+	$user = $ini['db']["username"];
+	$password = $ini['db']['passwd'];
+	$db = $ini['db']['db'];
 	
 	$conn = mysql_connect($host,$user,$password) or die(mysql_error());
 //	print("mysql_connect $host, $user, $password ");	
@@ -50,8 +51,8 @@ function get_page($conn, $page_name){
 }
 
 function get_bag_types($conn){
-        $query = "select name as name,code as code from bag_types";
-//                 "order by lower(name)";
+        $query = "select name as name,code as code from bag_types "
+                 . " order by lower(name)";
         return exec_query($conn, $query);
 }
 
