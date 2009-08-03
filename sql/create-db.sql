@@ -1,5 +1,3 @@
-create table pages(  name varchar(30) unique not null, id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, display_name varchar(50) not null, page_index INT NOT NULL DEFAULT 0, file varchar(30) not null);
-
 
 CREATE TABLE `tabs` (
 `id` INT NOT NULL AUTO_INCREMENT ,

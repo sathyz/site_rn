@@ -264,6 +264,7 @@
 /* NEW SELECT MENU */
 
 #top_menu {
+        display: none;
 	height: 24px;
 	margin-bottom: 14px;
 	padding-top: 12px;

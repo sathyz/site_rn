@@ -30,7 +30,7 @@ function exec_query( $conn,$query){
 
 function get_tabs($conn){
 	//$query = "select name, display_name, file from pages order by page_index";
-	$query = "select name, display_name from tabs where tab_index > -1 order by tab_index";
+	$query = "select name, display_name, external_url from tabs where tab_index > -1 order by tab_index";
 	return exec_query($conn, $query);
 }
 
@@ -48,6 +48,12 @@ function get_page($conn, $page_name){
 	}
 	
 	return $res[0];
+}
+
+function get_page_link($conn, $page){
+        $query = "select name, display_name from pages where name = '$page'";
+        $res = exec_query($conn,$query);
+        return $res[0];
 }
 
 function get_bag_types($conn){

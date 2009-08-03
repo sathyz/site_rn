@@ -2,6 +2,8 @@
 
 <?php
 include('php/util/db.php');
+include('php/util/common.php');
+
 $q = isset($_REQUEST["page"])?$_REQUEST["page"]:"home" ;
 $PAGES_DIR = "./php/pages/";
 $conn = init_db();
@@ -34,7 +36,7 @@ $show_ticker = $show_slideshow = ($q == "home");
         if($q == "products") include('php/include/products.inc');
     ?>
     
-    <title>Rainbow Novelties - <?php echo $page['title'];?></title>
+    <title>Rainbow Novelties <?php if($page['title'])echo "- " . $page['title'];?></title>
 </head>
 
 <body>
@@ -54,8 +56,10 @@ $show_ticker = $show_slideshow = ($q == "home");
         <ul>
                          <?php
                              foreach($tabs as $tab){
-                                 print("<li ".($tab['name']==$page['tab']? "id=tray-active":"") 
-                                         ."><a href=index.php?page=$tab[name]>$tab[display_name]</a></li>");
+                                 $url = $tab['external_url']? "$tab[external_url] target=_blank":"index.php?page=$tab[name]";
+                                 print("<li ".($tab['name']==$page['tab']? "id=tray-active":""). ">"
+                                        ."<a href=$url>$tab[display_name]</a>"
+                                        ."</li>");
                              }
                          ?>
         </ul>
@@ -87,9 +91,11 @@ $show_ticker = $show_slideshow = ($q == "home");
 
         <div id="col-text" <?php if($split_page) print("class=rpane")?>>
 
-                <h2 id="slogan"><span></span><?php echo $page['title']; ?></h2>
                 <?php
-                    if(!include($PAGES_DIR.$page['file'])){
+                    if($page['title']){
+                        print("<h2 id='slogan'><span></span>$page[title]</h2>");
+                    }
+                    if(!@include($PAGES_DIR.$page['file'])){
                              echo "Page under construction";
                     }
                     // the file is not present...
@@ -107,16 +113,17 @@ $show_ticker = $show_slideshow = ($q == "home");
         <?php
         if($show_ticker) include("php/pages/ticker.php");
         ?>
-        <!-- Do you want remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
         <p class="f-right">
-        <a href="#">Private Policy</a>
-        <a href="#">Legal Displaimer</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Site map</a>
+        <?php
+         $_links = array('privacy', 'disclaimer', 'terms', 'site_map');
+         foreach($_links as $_link){
+            print(link_to($conn, $_link)." ");
+         }
+         ?>
         </p>
         <!-- Do you want remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
 
-        <p>Copyright &copy;&nbsp;2008 <strong><a href="#">Rainbow Novelties</a></strong>, All Rights Reserved &reg;</p>
+        <p>Copyright &copy;&nbsp;2008 <strong><a href="index.php">Rainbow Novelties</a></strong>, All Rights Reserved &reg;</p>
 
     </div> <!-- /footer -->
 
