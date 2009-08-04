@@ -1,5 +1,7 @@
 <!-- Image slideshow -->
-    <div id="slideshow" class="lpane">
+    <div class="lpane">
+        <div id="slideshow-logo"> </div>
+        <div id="slideshow">
         <?php
             //XXX show loading data.. 
             if($show_slideshow){
@@ -13,4 +15,5 @@
                 array_walk($slides,'print_slide');
             }
         ?>
-    </div> <!-- /slideshow -->
+        </div> <!-- /slideshow -->
+     </div>

@@ -80,8 +80,9 @@ ol.ol-01 li {font-size:85%;}
 #col {position:relative; padding:15px 30px 15px 20px; background:url("../design/col.gif") 0 0 repeat-y;min-height:320px; }
 
     #ribbon {position:absolute; top:-5px; left:0; width:100px; height:100px; background:url("../design/ribbon.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden; z-index:10;}
+    #slideshow-logo {position:relative; left:10px; width:225px; height:40px; background:url("../images/rn_225x100.jpg") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden; z-index:10;}
     /* left side pane for the page  */
-    .lpane {position:relative; float:left; width:280px; height:215px; }
+    .lpane {position:relative; float:left; width:280px; height:215px;padding-top:15px; }
     .lpane img {position:absolute; top:28px; left:10px;}
 
     #col-text { padding-top:15px; line-height:1.7;}
