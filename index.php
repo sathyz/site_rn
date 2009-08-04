@@ -66,10 +66,11 @@ $show_ticker = $show_slideshow = ($q == "home");
         
         <!-- Search -->
         <div id="search" class="box">
-            <form action="#" method="get">
+            <form action="http://www.google.com/search" target="new" method="get">
                 <div class="box">
-                    <div id="search-input"><span class="noscreen">Search:</span><input type="text" size="30" name="" value="Search" /></div>
+                    <div id="search-input"><span class="noscreen">Search:</span><input type="text" size="30" name="q" value="Search" /></div>
                     <div id="search-submit"><input type="image" src="design/search-submit.gif" value="OK" /></div>
+                    <input type="hidden" name="sitesearch" value="www.rainbownovelties.in"/>
                 </div>
             </form>
         </div> <!-- /search -->
