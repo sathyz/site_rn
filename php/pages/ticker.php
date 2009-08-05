@@ -6,8 +6,10 @@
         <div class="scrollableArea">
             <?php
 		require_once('php/util/logo-helper.php');
+		require_once('php/config/constants.php');
 		
-		$logo_dir = '/test/images/Logo/';
+		$ini = parse_ini_file(SETTINGS,true);
+		$logo_dir = "/{$ini['dir']['root']}/{$ini['dir']['logo']}/";
 		
 		function add_logo($image, $key, $logo_dir){
 			echo "<img src='$logo_dir$image' alt='$image' />";

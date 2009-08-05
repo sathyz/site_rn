@@ -3,11 +3,15 @@
         <!-- <div id="slideshow-logo"> </div> -->
         <div id="slideshow">
         <?php
+            require_once("php/config/constants.php");
             //XXX show loading data.. 
             if($show_slideshow){
                 require_once('php/util/logo-helper.php');
-
-		$image_dir = '/test/images/Ticker/';
+		
+		$ini = parse_ini_file(SETTINGS,true);
+		$env = $ini['dir']['root'];
+		$ticker_dir = $ini['dir']['ticker'];
+		$image_dir = "/{$env}/${ticker_dir}/";
 		$slides = get_logos($image_dir);
                 /*print_r($slides);
 		$slides = array('2.jpg', '3.jpg', '4.jpg');*/

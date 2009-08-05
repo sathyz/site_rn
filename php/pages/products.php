@@ -38,8 +38,10 @@
                                            include("php/pages/products.html");
                                        }
 				       else{
+					   require_once('php/config/constants.php');
+					   $ini = parse_ini_file(SETTINGS,true);
                                            echo "<p>";
-                                           @include("images/album/$active_code/_info.txt");
+                                           @include("{$ini['dir']['album']}/$active_code/_info.txt");
                                            echo "</p>";
 				       }
                                    ?>

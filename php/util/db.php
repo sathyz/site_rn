@@ -1,5 +1,5 @@
 <?php
-define('SETTINGS','php/config/settings.ini');
+require_once('php/config/constants.php');
 
 function init_db(){
         $ini = parse_ini_file(SETTINGS,true);
