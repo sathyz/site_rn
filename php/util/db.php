@@ -16,10 +16,14 @@ function init_db(){
 	return $conn;
 }
 
-function exec_query( $conn,$query){
+function run_query($conn, $query){
 	$res = mysql_query($query, $conn)
 		or die(mysql_errno().', '.mysql_error());
-	
+	return $res;
+}
+
+function exec_query( $conn,$query){
+	$res = run_query($conn, $query);
    while ($row = mysql_fetch_assoc($res)) {
        $return[] = $row;
    }
@@ -63,7 +67,7 @@ function get_bag_types($conn){
 }
 
 function get_images($conn, $model){
-	$query = "select file from bags where model='$model' and file is not null";
+	$query = "select model,file from bags where model='$model' and file is not null";
 	return exec_query($conn, $query);
 }
 

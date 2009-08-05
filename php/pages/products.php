@@ -43,8 +43,8 @@
                                            echo "</p>";
 				       }
                                    ?>
-                                   <p>**Through respective marketing agencies and third party agencies.</p>
-                                    <p>*** All trademarks are the property of their respective owners and used for illustrative purposes only.***</p>
+                                <!--   <p>**Through respective marketing agencies and third party agencies.</p>
+                                    <p>*** All trademarks are the property of their respective owners and used for illustrative purposes only.***</p>-->
                                 </div>
 
                                 <div id="thumbs_div">

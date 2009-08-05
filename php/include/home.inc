@@ -1,5 +1,6 @@
 
 <link rel="stylesheet"  type="text/css" href="css/ticker.css">
+<link rel="stylesheet"  type="text/css" href="css/slideshow.css">
 <link rel="stylesheet"  type="text/css" href="css/smoothDivScroll.css">
 
 

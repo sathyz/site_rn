@@ -5,7 +5,7 @@
     <div class="scrollWrapper">
         <div class="scrollableArea">
             <?php
-		include('php/util/logo-helper.php');
+		require_once('php/util/logo-helper.php');
 		
 		$logo_dir = '/test/images/Logo/';
 		

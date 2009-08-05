@@ -7,7 +7,7 @@ function get_images_data($conn,$model){
 	$images = get_images($conn, $model);
 	//close_db($conn);
 	$dir = array(
-	'album' => '/test/images/album/',
+	'album' => '/test/images/Album/',
 	'thumbs' => '/test/images/thumbs/',
 	);
     
@@ -17,8 +17,8 @@ function get_images_data($conn,$model){
 	foreach($images as $image){
           // FIXME handle pagination
 	  $data .= "<li> "
-	       	  ."<a href=$dir[album]$image[file] rel=lightbox-bags>"
-                    ."<img class='thumb_img' src=$dir[thumbs]$image[file]>"
+	       	  ."<a href={$dir['album']}/{$image['model']}/{$image['file']} rel=lightbox-bags>"
+                    ."<img class='thumb_img' src='{$dir['thumbs']}/{$image['model']}/{$image['file']}'>"
                   ."</a>"
                ."</li>";
     }
