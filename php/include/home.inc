@@ -6,7 +6,7 @@
 
 <script type="text/javascript">
 
-$(function() {
+$(document).ready(function() {
     setInterval( "slideSwitch()", 5000 );
     $("ul#ticker01").liScroll(); // scroll the logos
 });
