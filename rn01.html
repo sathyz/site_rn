@@ -62,10 +62,11 @@
         
         <!-- Search -->
         <div id="search" class="box">
-            <form action="#" method="get">
+            <form action="http://www.google.com/search" target="new" method="get">
                 <div class="box">
-                    <div id="search-input"><span class="noscreen">Search:</span><input type="text" size="30" name="" value="Search" /></div>
-                    <div id="search-submit"><input type="image" src="design/search-submit.gif" value="OK" /></div>
+                    <div id="search-input"><span class="noscreen">Search:</span><input type="text" size="30" name="q" value="Search" /></div>
+                    <div id="search-submit"><input type="image" src="design/search-submit.gif" value="Google Search"/></div>
+                    <input type="hidden" name="sitesearch" value="www.rainbownovelties.in"/>
                 </div>
             </form>
         </div> <!-- /search -->
@@ -79,11 +80,14 @@
     
         
         <!-- Screenshot in browser (replace tmp/browser.gif) -->
-        <div id="slideshow" class="lpane">
+        <div class="lpane">
+               <div id="slideshow-logo"> </div>
+               <div id="slideshow">
                     <img src="images/slideshow/1.jpg" class="active"/>
                     <img src="images/slideshow/2.jpg"/>
                     <img src="images/slideshow/3.jpg"/>
                     <img src="images/slideshow/4.jpg"/>  
+               </div>
         </div> 
         
         <div id="col-text" class="rpane">
