@@ -2,14 +2,12 @@
         // XXX allow easy way for admin to add images
         // how about using DB?
 // include('../util/db.php');
+require_once('php/config/constants.php');
 
 function get_images_data($conn,$model){
 	$images = get_images($conn, $model);
 	//close_db($conn);
-	$dir = array(
-	'album' => '/test/images/Album/',
-	'thumbs' => '/test/images/thumbs/',
-	);
+        $ini = parse_ini_file(SETTINGS,true);
     
     $data = '';
     if($images){
@@ -17,8 +15,8 @@ function get_images_data($conn,$model){
 	foreach($images as $image){
           // FIXME handle pagination
 	  $data .= "<li> "
-	       	  ."<a href={$dir['album']}/{$image['model']}/{$image['file']} rel=lightbox-bags>"
-                    ."<img class='thumb_img' src='{$dir['thumbs']}/{$image['model']}/{$image['file']}'>"
+	       	  ."<a href='/{$ini['dir']['root']}/{$ini['dir']['album']}/{$image['model']}/{$image['file']}' rel=lightbox-bags>"
+                    ."<img class='thumb_img' src='/{$ini['dir']['root']}/{$ini['dir']['thumbs']}/{$image['model']}/{$image['file']}'>"
                   ."</a>"
                ."</li>";
     }
