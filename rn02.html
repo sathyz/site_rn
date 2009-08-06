@@ -24,16 +24,16 @@
 
 
     <script type="text/javascript">
-		<!--
+	
                 $(document).ready(function ()
                 {
                         $('#frm-contact').FormValidate({
                                 phpFile:"",
-                                ajax:false,
-                                validCheck: true
+                                ajax:true,
+                                validCheck: false
                         });
                 });
-		-->		
+				
    </script>
     <title>Impress</title>
 </head>
@@ -119,6 +119,11 @@ No. 192/1, 4th cross, Cheluvadipalaya, Bangalore – 560053<br/><br/>
 		<li class="email"> 
 			<label for="form_email">Email address</label><span class="required"> </span>
                         <input id="form_email" class="vemail" name="Email" type="text" />
+		</li>
+		
+                <li class="how"> 
+			<label for="form_phone">Contact number</label><span class="required">Required</span>
+                        <input id="form_phone" class="is_required" name="Phone" type="text" />
 		</li>
                 
 		<li class="comments"> 
