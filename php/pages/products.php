@@ -29,7 +29,7 @@
                                 <div id="top_menu"></div>
 
                                 <div id="gallery_data">
-                                <div id="gallery_title"><!--<span class="xtra">RN</span>--> <strong><?php print($active_model);?></strong> <!--<span class="xtra"> pictures <a href="#">(reload)</a></span></div>--> <!-- TODO: Implement page reload -->
+                                <div id="gallery_title"><!--<span class="xtra">RN</span>--> <strong><?php print($active_model);?></strong> <!--<span class="xtra"> pictures <a href="#">(reload)</a></span>--> </div> <!-- TODO: Implement page reload -->
                                 </div>
 
                                 <div style="display: block;" id="gallery_description">
