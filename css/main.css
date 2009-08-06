@@ -46,7 +46,7 @@ ol.ol-01 li {font-size:85%;}
 
 #main {width:960px; margin:0 auto; overflow:hidden;}
 
-    #header {position:relative; /*height:90px;*/ padding:30px 20px 15px 20px;}
+    #header {position:relative; /*height:90px;*/ padding:5px 20px 15px 20px;}
 
         #logo {margin:0;}
     
@@ -68,7 +68,7 @@ ol.ol-01 li {font-size:85%;}
         #search #search-input input {width:136px; margin:8px; border:0; font:100%/1 "arial",sans-serif;}
         #search #search-submit {position:absolute; top:0; right:0; width:30px;}
 
-    #footer {clear:both; padding:20px 20px 40px 20px; font-size:85%;}
+    #footer {clear:both; /*padding:20px 20px 40px 20px;*/ font-size:85%;}
     #footer p {margin:0;}
 
 /* ----------------------------------------------------------------------------------------------------------
@@ -82,7 +82,7 @@ ol.ol-01 li {font-size:85%;}
     #ribbon {position:absolute; top:-5px; left:0; width:100px; height:100px; background:url("../design/ribbon.gif") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden; z-index:10;}
     #slideshow-logo {position:relative; left:10px; width:225px; height:40px; background:url("../images/rn_225x100.jpg") 0 0 no-repeat; font-size:0; line-height:0; overflow:hidden; z-index:10;}
     /* left side pane for the page  */
-    .lpane {position:relative; float:left; width:280px; height:215px;padding-top:15px; }
+    .lpane {position:relative; float:left; width:280px; height:auto;padding-top:15px; }
     .lpane img {position:absolute; top:28px; left:10px;}
 
     #contact-details{float:left;width:40%;}
