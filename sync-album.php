@@ -6,7 +6,7 @@ function get_files($dir){
 	$d = opendir($dir);
 	$files = array();
 	while($f = readdir($d)){
-		if ($f!=='.' && $f!=='..'){
+		if ($f!=='.' && $f!=='..' && $f!=='_info.txt'){
 			array_push($files,$f);
 		}
 	}
@@ -15,6 +15,7 @@ function get_files($dir){
 
 function save_bag($conn,$model, $filename){
 	preg_match('/(?<model>[A-Z]+)(?<design>\d\d\d)(?<compartments>\d\d)(?<pockets>\d)(?<features>\w?)(?<ext>\.\w+)/', $filename, $matches);
+	//XXX: Problem in this regex. doesn't work in php4
 	$query = "insert into bags(model, design, compartments, pockets, features, file) values (" . 
           "'{$model}', {$matches['design']}, {$matches['compartments']}, {$matches['pockets']}," .
 	  "'{$matches['features']}', '{$filename}');";
@@ -26,7 +27,9 @@ function save_bag($conn,$model, $filename){
 function is_bag_in_db($conn,$model, $bag){
 	$query = "select id from bags where model = '{$model}' and file = '{$bag}'";
 	$res = exec_query($conn,$query);
-	return isset($res['id']);
+        print("{$query} - ");
+        print_r($res);
+	return isset($res[0]['id']);
 }
 
 function get_bags_from_db($conn){
@@ -48,7 +51,10 @@ function delete_bags($conn, $bags){
 	 print(".. DONE<br/>");
 }
 
-$album = '/var/www/test/images/Album/';
+require_once("php/config/constants.php");
+$ini = parse_ini_file(SETTINGS,true);
+$root = getenv('DOCUMENT_ROOT');
+$album = "/{$root}/{$ini['dir']['root']}/{$ini['dir']['album']}";
 $conn = init_db();
 
 $bags_in_db = get_bags_from_db($conn);
