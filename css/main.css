@@ -85,8 +85,8 @@ ol.ol-01 li {font-size:85%;}
     .lpane {position:relative; float:left; width:280px; height:auto;padding-top:15px; }
     .lpane img {position:absolute; top:28px; left:10px;}
 
-    #contact-details{float:left;width:40%;}
-    #contact-form{float:right; width:60%;}
+    #contact-details{float:right;width:40%;}
+    #contact-form{float:left; width:60%;}
     #col-text { padding-top:15px; line-height:1.7;}
       .rpane{float:right; width:600px;}
 

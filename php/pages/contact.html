@@ -1,12 +1,65 @@
-<p>Email: <a href="mailto:info@rainbownovelties.in">info@rainbownovelties.in</a><br/>
-Phone: 080-22254777, 080-22351125 <br/><br/>
 
-Monday to Friday – 10 AM to 7 PM<br/>
-Saturday – 10 AM to 1 PM <br/><br/>
+<div id="contact-form">
+        <form class="cmxform" id="commentForm" method="POST" action="contact_action.php">
+        <fieldset>
+                <!--    <legend>Please provide your name, email address (won't be published) and a comment</legend> -->
+                <p>
+                        <label for="cname">Name (required, at least 2 characters)</label>
+                        <input id="cname" name="name" class="required" minlength="2" />
+                </p>
+                <p>
+                <label for="creason">Reason for contacting (required)</label>
+                <select id="creason" class="required" validate="required:true" title="Please select a reason!" name="reason">
+                        <option value=""></option>
+                        <option value="1">Place an order</option>
+                        <option value="2">Enquiry</option>
+                        <option value="3">Get a sample</option>
+                        <option value="4">Feedback and Comments!</option>
+                        <option value="5">Other..</option>
+                </select>
 
-Office Address: <br/>
-No.6, 3rd Cross, J M lane, Balepet, Bangalore – 560053<br/><br/>
+                </p>
+                <p>
+                        <label for="clocation">Location (optional)</label>
+                        <input id="clocation" name="location" class="" />
+                </p>
+                <p>
+                        <label for="cemail">E-Mail (optional)</label>
+                        <input id="cemail" name="email" class="email" />
+                </p>
+                <p>
+                        <label for="cphone">Phone (required)</label>
+                        <input id="cphone" name="phone" class="required digits" value="" />
+                </p>
+                <p>
+                        <label for="cphone_confirm">Confirm phone (required)</label>
+                        <input id="cphone_confirm" equalTo="#cphone" name="confirm_phone" class="required digits" value="" />
+                </p>
+                <p>
+                        <label for="ccomment">Your message (required)</label>
 
-Factory Address: <br/>
-No. 192/1, 4th cross, Cheluvadipalaya, Bangalore – 560053<br/><br/>
-</p>									 											 							  				
+                        <textarea id="ccomment" name="comment" class="required"></textarea>
+                </p>
+                <p>
+                        <input class="submit" type="submit" value="Submit"/>
+                </p>
+        </fieldset>
+	</form>
+        <div id="result"></div>
+</div>
+
+
+<div id="contact-details">
+	<p>Email: <a href="mailto:info@rainbownovelties.in">info@rainbownovelties.in</a><br/>
+	Phone: 080-22254777, 080-22351125 <br/><br/>
+
+	Monday to Friday – 10 AM to 7 PM<br/>
+	Saturday – 10 AM to 1 PM <br/><br/>
+
+	Office Address: <br/>
+	No.6, 3rd Cross, J M lane, Balepet, Bangalore – 560053<br/><br/>
+
+	Factory Address: <br/>
+	No. 192/1, 4th cross, Cheluvadipalaya, Bangalore – 560053<br/><br/>
+	</p>
+</div>									 											 							  				

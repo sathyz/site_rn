@@ -6,8 +6,6 @@
     <meta http-equiv="content-language" content="en" />
     <meta name="robots" content="all,follow" />
 
-    <meta name="author" lang="en" content="All: Your name [www.url.com]; e-mail: info@url.com" />
-    <meta name="copyright" lang="en" content="Webdesign: Nuvio [www.nuvio.cz]; e-mail: ahoj@nuvio.cz" />
 
     <meta name="description" content="..." />
     <meta name="keywords" content="..." />
@@ -20,21 +18,44 @@
    
     <link rel='stylesheet' href='css/contact.css' type='text/css' media='all' />
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"> </script>
-    <script type="text/javascript" src="js/form.js"> </script>
+    <script type="text/javascript" src="js/jquery.form.js"> </script>
+    <script type="text/javascript" src="js/jquery.validate.js"> </script>
+    <script type="text/javascript" src="js/cmxforms.js"> </script>
 
 
     <script type="text/javascript">
-	
-                $(document).ready(function ()
-                {
-                        $('#frm-contact').FormValidate({
-                                phpFile:"",
-                                ajax:true,
-                                validCheck: false
-                        });
+	$().ready(function() {
+                // validate the comment form when it is submitted
+
+                var loader = jQuery('<div id="loader"><img src="images/loading.gif" alt="loading..." /></div>')
+                    .css({position: "relative", top: "1em", left: "25em"})
+                    .appendTo("#contact-form")
+                    .hide();
+    
+                jQuery().ajaxStart(function() {
+                        loader.show();
+                }).ajaxStop(function() {
+                                loader.hide();
+                }).ajaxError(function(a, b, e) {
+                        throw e;
                 });
-				
+
+
+                $("#commentForm").validate({
+                        submitHandler: function(form) {
+                        jQuery(form).ajaxSubmit({
+                              target: "#result"
+                              });
+                        }
+                 });
+	});				
    </script>
+   <style>
+#commentForm { width: 500px; }
+#commentForm label { width: 250px; }
+#commentForm label.error, #commentForm input.submit { margin-left: 253px; }
+   </style>
+
     <title>Impress</title>
 </head>
 
@@ -94,48 +115,52 @@ No. 192/1, 4th cross, Cheluvadipalaya, Bangalore – 560053<br/><br/>
 </p> 
 	</div>
 	<div id="contact-form">
-<form id="frm-contact">
-<fieldset>
-        <ul class="form">
-                <!-- <li class="form_head"> Email isn't required but if you want a response be sure to include it!</li> -->
-                <li class="who"> <label for="form_name">Name</label><span class="required">Required</span>
-                        <input id="form_name" class="is_required" name="Name" type="text" /></li>
-                <li class="why"> 
-			<label for="form_reason">Reason for contacting</label><span class="required">Required</span>
-                	<select id="form_reason" class="is_required" name="Reason"> 
-				<option>Place an order</option> 
-				<option>Enquiry</option> 
-				<option>Get a sample</option> 
-				<option>Feedback and Comments</option> 
-				<option>Other..</option> 
-			</select>
-		</li>
-                
-		<li class="where"> 
-			<label for="form_location">Location</label><span class="required"> </span>
-			<input id="form_location" name="Location" type="text" />
-		</li>
-                
-		<li class="email"> 
-			<label for="form_email">Email address</label><span class="required"> </span>
-                        <input id="form_email" class="vemail" name="Email" type="text" />
-		</li>
-		
-                <li class="how"> 
-			<label for="form_phone">Contact number</label><span class="required">Required</span>
-                        <input id="form_phone" class="is_required" name="Phone" type="text" />
-		</li>
-                
-		<li class="comments"> 
-			<label for="form_comment">Message</label><span class="required">Required</span>
-                        <textarea id="form_comment" class="is_required" name="Message"></textarea>
-		</li>
-                <li class="submit"> 
-			<input id="send_contact" type="submit" value="Send" />
-		</li>
-        </ul>
-</fieldset>
+	<form class="cmxform" id="commentForm" method="get" action="contact.php">
+        <fieldset>
+                <!--    <legend>Please provide your name, email address (won't be published) and a comment</legend> -->
+                <p>
+                        <label for="cname">Name (required, at least 2 characters)</label>
+                        <input id="cname" name="name" class="required" minlength="2" />
+                </p>
+                <p>
+                <label for="creason">Reason for contacting (required)</label>
+                <select id="creason" class="required" validate="required:true" title="Please select a reason!" name="reason">
+                        <option value=""></option>
+                        <option value="1">Place an order</option>
+                        <option value="2">Enquiry</option>
+                        <option value="3">Get a sample</option>
+                        <option value="4">Feedback and Comments!</option>
+                        <option value="5">Other..</option>
+                </select>
+
+                </p>
+                <p>
+                        <label for="clocation">Location (optional)</label>
+                        <input id="clocation" name="location" class="" />
+                </p>
+                <p>
+                        <label for="cemail">E-Mail (optional)</label>
+                        <input id="cemail" name="email" class="email" />
+                </p>
+                <p>
+                        <label for="cphone">Phone (required)</label>
+                        <input id="cphone" name="phone" class="required digits" value="" />
+                </p>
+                <p>
+                        <label for="cphone_confirm">Confirm phone (required)</label>
+                        <input id="cphone_confirm" equalTo="#cphone" name="confirm_phone" class="required digits" value="" />
+                </p>
+                <p>
+                        <label for="ccomment">Your comment (required)</label>
+
+                        <textarea id="ccomment" name="comment" class="required"></textarea>
+                </p>
+                <p>
+                        <input class="submit" type="submit" value="Submit"/>
+		</p>
+        </fieldset>
 </form>
+		<div id="result"></div>
 	</div>   
         
     
@@ -148,14 +173,12 @@ No. 192/1, 4th cross, Cheluvadipalaya, Bangalore – 560053<br/><br/>
     <!-- Footer -->
     <div id="footer">
     
-        <!-- Do you want remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
         <p class="f-right">
         <a href="#">Private Policy</a>
         <a href="#">Legal Displaimer</a>
         <a href="#">Terms of Use</a>
         <a href="#">Site map</a>
         </p>
-        <!-- Do you want remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
 
         <p>Copyright &copy;&nbsp;2008 <strong><a href="#">Rainbow Novelties</a></strong>, All Rights Reserved &reg;</p>
 

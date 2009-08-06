@@ -32,8 +32,7 @@ $show_ticker = $show_slideshow = ($q == "home");
     <link rel="stylesheet" media="print" type="text/css" href="css/print.css" />
 
     <?php
-        if($show_ticker or $show_slideshow) include('php/include/home.inc');
-        if($q == "products") include('php/include/products.inc');
+        @include("php/include/{$q}.inc");
     ?>
     
     <title>Rainbow Novelties <?php if($page['title'])echo "- " . $page['title'];?></title>
