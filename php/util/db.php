@@ -34,7 +34,7 @@ function exec_query( $conn,$query){
 
 function get_tabs($conn){
 	//$query = "select name, display_name, file from pages order by page_index";
-	$query = "select name, display_name, external_url from tabs where tab_index > -1 order by tab_index";
+	$query = "select id, name, display_name, external_url from tabs where tab_index > -1 order by tab_index";
 	return exec_query($conn, $query);
 }
 

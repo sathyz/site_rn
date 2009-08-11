@@ -121,9 +121,8 @@ $show_ticker = $show_slideshow = ($q == "home");
          }
          ?>
         </p>
-        <!-- Do you want remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
 
-        <p>Copyright &copy;&nbsp;2008 <strong><a href="index.php">Rainbow Novelties</a></strong>, All Rights Reserved &reg;</p>
+        <p>Copyright &copy;&nbsp;2009 <strong><a href="index.php">Rainbow Novelties</a></strong>, All Rights Reserved &reg;. Site by <a href="http://twitter.com/sathyz" target="_blank">sathyz</a> </p>
 
     </div> <!-- /footer -->
 

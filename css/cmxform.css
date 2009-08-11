@@ -39,7 +39,8 @@ form.cmxform label.error, label.error {
 	font-style: italic
 }
 div.error { display: none; }
-form.cmxform input {	border: 1px solid black; }
+form.cmxform input,textarea, select {	border: 1px solid black;}
+form.cmxform textarea, select {width:176px;}
 input.checkbox { border: none }
 input:focus { border: 1px dotted black; }
 input.error { border: 1px dotted red; }

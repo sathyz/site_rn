@@ -2,9 +2,7 @@
 
     Output device: screen, projection
 
-    Author:     Nuvio (www.nuvio.cz)
-    Update:     2008-07-29, 18:30 GMT+1
-    Version:    2.2.6 (2008-07-13, 14:28 GMT+1)
+    Author:     Satheesh Kumar Mohan <sathyz@gmail.co>
 
     Structure:
         display; position; z-index; float; clear; width; height; overflow; margin; padding; border; background; align; font;

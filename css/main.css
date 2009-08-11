@@ -2,9 +2,7 @@
 
     Output device: screen, projection
 
-    Author:     Nuvio (www.nuvio.cz)
-    Update:     2008-07-29, 18:30 GMT+1
-    Version:    2.2.6 (2008-07-13, 14:28 GMT+1)
+    Author:     Satheesh Kumar Mohan <sathyz@gmail.com>
 
     Structure:
         display; position; z-index; float; clear; width; height; overflow; margin; padding; border; background; align; font;
@@ -90,6 +88,7 @@ ol.ol-01 li {font-size:85%;}
     #col-text { padding-top:15px; line-height:1.7;}
       .rpane{float:right; width:600px;}
 
+	#home-text{padding-top:28px;}
         #slogan {position:relative; width:289px; height:33px; overflow:hidden; margin:0; padding:0; font-size:180%;}
         #slogan span {display:block; position:absolute; top:0; left:0; z-index:1; width:100%; height:100%; margin:0; padding:0; background:url("../tmp/slogan.gif") 0 0 no-repeat;}
         #btns {margin-top:25px; margin-bottom:0;}

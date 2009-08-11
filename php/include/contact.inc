@@ -6,7 +6,13 @@
 
 
     <script type="text/javascript">
+        function refresh_captcha(){
+                $.post('lib/captcha/newsession.php');
+                $("#refreshimg").load('lib/captcha/image_req.php');
+                return false;   
+        }
         $().ready(function() {
+        $("#refreshimg").click(refresh_captcha);
                 // validate the comment form when it is submitted
 
                 var loader = jQuery('<div id="loader"><img src="images/loading.gif" alt="loading..." /></div>')
@@ -24,14 +30,26 @@
 
 
                 $("#commentForm").validate({
+                        rules:{
+                                captcha:{
+                                        required:true,
+                                        remote: "lib/captcha/process.php"
+                                        }
+                        },
+
+                        messages: {
+                                captcha: "Correct captcha is required. Click the captcha to generate a new one"
+                        },
+
                         submitHandler: function(form) {
-                        jQuery(form).ajaxSubmit({
-                              target: "#result"
-                              });
-                        }
+                                jQuery(form).ajaxSubmit({
+                                        target: "#contact-form"
+                                });
+                        },
+                        onkeyup: false
                  });
-        });                             
-   </script>
+        });
+    </script>
    <style>
 #commentForm { width: 500px; }
 #commentForm label { width: 250px; }

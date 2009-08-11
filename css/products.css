@@ -43,13 +43,10 @@
 	float: left;
 	width: 200px;
 	margin: 0px;
-	margin-bottom: 10px;
+        margin-bottom: 10px;
 	padding-top: 10px;
 	font-family: ;
 	font-size: 10px;
-	background: #C4C4C4;
-	border-top: 1px solid #C4C4C4;
-	border-bottom: 1px solid #C4C4C4;
 }
 
 
@@ -95,10 +92,7 @@
 #msc_menu ul {
 	display: block;
 	margin: 0px 0px 10px 0px;
-	padding: 4px 0px 4px 0px;
 	font-size: 12px;
-	background: #C4C4C4;
-	border-top: 1px solid #C4C4C4;
 }
 
 #msc_menu ul li {
@@ -108,7 +102,7 @@
 	padding: 4px 0 4px 10px;
 	color: #000000;
 	font-size: 12px;
-	background: #C4C4C4;
+	background: transparent url(../design/s_menu.gif) repeat scroll 0 0;
 	/*white-space: nowrap;*/
 }
 
@@ -254,7 +248,8 @@
 /**** thumbs container definitions ****/
 
 #msc_thumbs {
-	margin: 0px 0px 10px 200px;
+	float:left;
+	margin: 0px 0px 10px;
 	width: 580px;
 	padding: 0px 0px 6px 0px;
 }
