@@ -14,7 +14,7 @@
                                                                     $li .= "id=msc_menu_active";
                                                                     $active_model = $bag_type["name"];
                                                             }
-                                                            $li .= "><a class='nonum' href='index.php?page=products&model=$bag_type[code]'>"
+                                                            $li .= "><a class='nonum' href='index.php?page=products&amp;model=$bag_type[code]'>"
                                                                     . $bag_type["name"]. "</a></li>";
                                                             print($li);
                                                     }

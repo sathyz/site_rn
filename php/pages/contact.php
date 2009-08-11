@@ -13,7 +13,7 @@ $_SESSION['captcha_id'] = $str;
 ?>
 
 <div id="contact-form">
-        <form class="cmxform" id="commentForm" method="POST" action="contact_action.php">
+        <form class="cmxform" id="commentForm" method="post" action="contact_action.php">
         <fieldset>
                 <!--    <legend>Please provide your name, email address (won't be published) and a comment</legend> -->
                 <p>
@@ -59,11 +59,11 @@ $_SESSION['captcha_id'] = $str;
                 <p>
                         <label for="ccomment">Your message <strong>*</strong></label>
 
-                        <textarea id="ccomment" name="comment" class="required"></textarea>
+                        <textarea id="ccomment" name="comment" class="required" rows="5" cols="15"></textarea>
                 </p>
                   <p>
                          <label for="captcha">Enter the characters as seen on the image below (case insensitive)<strong>*</strong>
-                         <a href="#" id="refreshimg" title="Click to refresh image"><img src="lib/captcha/images/image.php?<?php echo time(); ?>" width="132" height="46" alt="Captcha image" /></a></span></label>
+                         <a href="#" id="refreshimg" title="Click to refresh image"><img src="lib/captcha/images/image.php?<?php echo time(); ?>" width="132" height="46" alt="Captcha image" /></a></label>
                          <input type="text" maxlength="6" name="captcha" id="captcha" />
                 </p>
                  <p>

@@ -18,12 +18,13 @@ foreach($tabs as $tab){
 	$query = "select name, display_name from pages where tab_id = {$tab['id']}";
 	$pages = exec_query($conn, $query);
 	print_tab_link(get_link($tab));
-	echo "<ul class='ul-01'>";
+        $li = "";
 	foreach($pages as $page){
 		if(!$page['name'] || $page['name']== $tab['name'] || $page['name']=='404') continue;
-		echo "<li>". get_link($page) . "</li>";
+		$li .= "<li>". get_link($page) . "</li>";
 	}
-	echo "</ul>";
+
+	if($li) echo "<ul class='ul-01'>{$li}</ul>";
 }
 
 ?>

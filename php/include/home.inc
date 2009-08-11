@@ -1,7 +1,7 @@
 
-<link rel="stylesheet"  type="text/css" href="css/ticker.css">
-<link rel="stylesheet"  type="text/css" href="css/slideshow.css">
-<link rel="stylesheet"  type="text/css" href="css/smoothDivScroll.css">
+<link rel="stylesheet"  type="text/css" href="css/ticker.css" />
+<link rel="stylesheet"  type="text/css" href="css/slideshow.css" />
+<link rel="stylesheet"  type="text/css" href="css/smoothDivScroll.css" />
 
 
 <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>

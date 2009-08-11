@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <?php
 include('php/util/db.php');
@@ -55,9 +55,9 @@ $show_ticker = $show_slideshow = ($q == "home");
         <ul>
                          <?php
                              foreach($tabs as $tab){
-                                 $url = $tab['external_url']? "$tab[external_url] target=_blank":"index.php?page=$tab[name]";
-                                 print("<li ".($tab['name']==$page['tab']? "id=tray-active":""). ">"
-                                        ."<a href=$url>$tab[display_name]</a>"
+                                 $url = $tab['external_url']? "'{$tab['external_url']}' target='_blank'":"'index.php?page={$tab['name']}'";
+                                 print("<li ".($tab['name']==$page['tab']? "id='tray-active'":""). ">"
+                                        ."<a href={$url}>{$tab['display_name']}</a>"
                                         ."</li>");
                              }
                          ?>
@@ -85,15 +85,15 @@ $show_ticker = $show_slideshow = ($q == "home");
         <!-- space for slideshow -->
         <?php 
         $split_page = true;
-        if($show_slideshow) include("php/pages/slideshow.php"); 
+        if($show_slideshow) include("php/pages/slideshow.php"); 	
         else $split_page = false; // if not any of the above cases
         ?>
 
-        <div id="col-text" <?php if($split_page) print("class=rpane")?>>
+        <div id="col-text" <?php if($split_page) print("class='rpane'")?>>
 
                 <?php
                     if($page['title']){
-                        print("<h2 id='slogan'><span></span>$page[title]</h2>");
+                        print("<h2 id='slogan'><span></span>{$page['title']}</h2>");
                     }
                     if(!@include($PAGES_DIR.$page['file'])){
                              echo "Page under construction";
