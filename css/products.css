@@ -45,7 +45,6 @@
 	margin: 0px;
         margin-bottom: 10px;
 	padding-top: 10px;
-	font-family: ;
 	font-size: 10px;
 }
 
@@ -65,7 +64,6 @@
 	font-weight: bold;
 	font-size: 12px;
 	line-height: 14px;
-	font-family: ;
 	text-decoration: none;
 }
 
@@ -209,7 +207,6 @@
 	display: block;
 	height: auto !important;
 	color: #C4C4C4;
-	font-family: ;
 	font-size: 10px;
 	line-height: 18px;
 	background: rgb(157,184,210);
@@ -277,7 +274,6 @@
 	float: left;
 	padding: 0px 10px;
 	
-	font-family: ;
 	font-size: 10px;
 	line-height: 10px;
 }
@@ -363,7 +359,6 @@
 	color: #69C;
 	font-size: 12px;
 	line-height: 16px;
-	font-family: ;
 	text-decoration: underline;
 }
 
@@ -378,7 +373,6 @@
 	color: #C4C4C4;
 	font-size: 18px;
 	line-height: 24px;
-	font-family: ;
 	font-weight: normal;
 }
 
@@ -414,7 +408,6 @@
 	margin: 4px 0px 0px 0px;
 	padding: 4px 4px 6px 10px;
 	color: #C4C4C4;
-	font-family: ;
 	font-weight: normal;
 	text-align: left;
 	background: rgb(231,237,243);
@@ -484,13 +477,11 @@
 	padding: 0px;
 	color: #C4C4C4;
 	font-size: 14px;
-	font-family: ;
 }
 
 #thumbs_cont p {
 	padding: 14px 0px 0px 0px;
 	color: #F30;
-	font-family: ;
 	font-size: 14px;
 }
 
@@ -654,7 +645,6 @@ body > div#msc_image {
 	color: #FFF;
 	font-size: 10px;
 	line-height: 12px;
-	font-family: ;
 	font-weight: bold;
 }
 
@@ -705,7 +695,6 @@ body > div#msc_image {
 	margin-top: 20px;
 	padding: 8px;
 	font-weight: normal;
-	font-family: ;
 	background: rgb(193,212,230);
 	border: 1px solid rgb(193,212,230);
 }
@@ -727,7 +716,6 @@ body > div#msc_image {
 	padding: 0px;
 	font-size: 11px;
 	font-weight: normal;
-	font-family: ;
 	color: #C4C4C4;
 }
 
@@ -736,7 +724,6 @@ body > div#msc_image {
 	padding: 0px 0px 10px 0px;
 	font-size: 11px;
 	font-weight: normal;
-	font-family: ;
 	color: #C4C4C4;
 	background: rgb(193,212,230);
 }
@@ -772,7 +759,6 @@ body > div#msc_image {
 	padding: 4px;
 	font-size: 14px;
 	font-weight: bold;
-	font-family: ;
 	/*background: #C4C4C4;*/
 }
 
@@ -920,7 +906,6 @@ body > div#msc_image {
 	color: #FFF;
 	font-size: 18px;
 	line-height: 18px;
-	font-family: ;
 	font-weight: normal;
 	text-align: center;
 }
@@ -959,14 +944,12 @@ body > div#msc_image {
 	color: #C4C4C4;
 	font-size: 12px;
 	line-height: 16px;
-	font-family: ;
 }
 
 #image_info a {
 	color: #C4C4C4;
 	font-size: 12px;
 	line-height: 16px;
-	font-family: ;
 }
 
 #image_bg {
@@ -1014,7 +997,6 @@ body > #image_bg {
 	margin: 0px;
 	padding: 0px;
 	color: #FFF;
-	font-family: ;
 	font-size: 11px;
 	line-height: 14px;
 	font-weight: normal;
@@ -1056,7 +1038,6 @@ body > #image_bg {
 	/*width: 580px;*/
 	padding: 6px 0px 6px 0px;
 	color: #C4C4C4;
-	font-family: ;
 	font-weight: normal;
 	font-size: 9px;
 	line-height: 12px;
@@ -1114,7 +1095,6 @@ body > #image_bg {
 	margin: 0px;
 	padding: 2px;
 	color: #FFF;
-	font-family: ;
 	font-size: 11px;
 	line-height: 14px;
 	font-weight: normal;
@@ -1124,7 +1104,7 @@ body > #image_bg {
 #debug_information {
 	position: relative;
 	float: left;
-	margin: 20 auto;
+	margin: 20px auto;
 	padding: 20px;
 	border: 10px solid #f30;
 }

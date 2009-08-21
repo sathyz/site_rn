@@ -86,6 +86,7 @@ ol.ol-01 li {font-size:85%;}
     #contact-details{float:right;width:40%;}
     #contact-form{float:left; width:60%;}
     #col-text { padding-top:15px; line-height:1.7;}
+    #col-text p {text-align:justify;}
       .rpane{float:right; width:600px;}
 
 	#home-text{padding-top:28px;}

@@ -33,6 +33,10 @@ form.cmxform fieldset p, form.cmxform fieldset fieldset {
 	background: url(../images/cmxform-divider.gif) left bottom repeat-x;
 }
 
+form.cmxform p {
+    text-align: left;
+}
+
 form.cmxform label.error, label.error {
 	/* remove the next line when you have trouble in IE6 with labels in list */
 	color: #65aecf;

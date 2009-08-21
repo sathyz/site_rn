@@ -22,9 +22,10 @@ $show_ticker = $show_slideshow = ($q == "home");
 
     <meta name="author" lang="en" content="All: Satheesh Kumar M [sathyz.wordpress.com]; e-mail: sathyz@gmail.com" />
 
-    <meta name="description" content="..." />
+    <meta name="description" content="Rainbow Novelties - " />
     <meta name="keywords" content="..." />
 
+    <link rel="icon" type="image/x-icon" href="logo.ico" />
     <link rel="stylesheet" media="screen,projection" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" media="screen,projection" type="text/css" href="css/main.css" />
     <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="css/main-msie.css" /><![endif]-->
@@ -67,8 +68,8 @@ $show_ticker = $show_slideshow = ($q == "home");
         <div id="search" class="box">
             <form action="http://www.google.com/search" target="new" method="get">
                 <div class="box">
-                    <div id="search-input"><span class="noscreen">Search:</span><input type="text" size="30" name="q" value="Search" /></div>
-                    <div id="search-submit"><input type="image" src="design/search-submit.gif" value="OK" /></div>
+                    <div id="search-input"><label for="txtSearch"><span class="noscreen">Search:</span></label><input type="text" size="30" name="q" value="Search"  id="txtSearch"/></div>
+                    <div id="search-submit"><input type="image" src="design/search-submit.gif" value="OK" alt="OK" /></div>
                     <input type="hidden" name="sitesearch" value="www.rainbownovelties.in"/>
                 </div>
             </form>
