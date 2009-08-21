@@ -22,8 +22,8 @@ $show_ticker = $show_slideshow = ($q == "home");
 
     <meta name="author" lang="en" content="All: Satheesh Kumar M [sathyz.wordpress.com]; e-mail: sathyz@gmail.com" />
 
-    <meta name="description" content="Rainbow Novelties - " />
-    <meta name="keywords" content="..." />
+    <meta name="description" content="Rainbow Novelties - specialises in creating custom designed bags for the discerning corporations" />
+    <meta name="keywords" content="rainbow novelties bags apparels gifts" />
 
     <link rel="icon" type="image/x-icon" href="logo.ico" />
     <link rel="stylesheet" media="screen,projection" type="text/css" href="css/reset.css" />
@@ -123,7 +123,7 @@ $show_ticker = $show_slideshow = ($q == "home");
          ?>
         </p>
 
-        <p>Copyright &copy;&nbsp;2009 <strong><a href="index.php">Rainbow Novelties</a></strong>, All Rights Reserved &reg;. Site by <a href="http://twitter.com/sathyz" target="_blank">sathyz</a> </p>
+        <p>Copyright &copy;&nbsp;2009 <strong><a href="index.php?page=home">Rainbow Novelties</a></strong>, All Rights Reserved &reg;. Site by <a href="http://twitter.com/sathyz" target="_blank">sathyz</a> </p>
 
     </div> <!-- /footer -->
 

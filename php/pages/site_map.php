@@ -1,4 +1,4 @@
-<h3><a href='index.php' title='RN'>RN</a></h3>
+<h3><a href='index.php?page=home' title='RN'>RN</a></h3>
     <ul class='ul-01'>
         <li><a href='index.php?page=privacy' title='Privacy Policy'>Privacy Policy</a></li>
         <li><a href='index.php?page=disclaimer' title='Legal Disclaimer'>Legal Disclaimer</a></li>
