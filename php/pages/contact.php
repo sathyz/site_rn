@@ -77,7 +77,7 @@ $_SESSION['captcha_id'] = $str;
 
 <div id="contact-details">
 	<p>Email: <a href="mailto:info@rainbownovelties.in">info@rainbownovelties.in</a><br/>
-	Phone: 080-22254777, 080-22351125 <br/><br/>
+	Phone: 080-41238793, 080-22351125 <br/><br/>
 
 	Monday to Friday – 10 AM to 7 PM<br/>
 	Saturday – 10 AM to 1 PM <br/><br/>
